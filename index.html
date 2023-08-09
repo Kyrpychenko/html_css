@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="header">Vocabulary List</h1>
+    </header>
+
+    <main>
+      <div class="layout">
+        <form onsubmit="event.preventDefault();addButton()">
+          <h5 class="h5head">Write your vocabularies down with their definition:</h5>
+          <div class="inputWrapper">
+            <input type="text" class="nameInput" placeholder="name" required />
+            <input type="text" class="definitionInput" placeholder="definition" required />
+            <button class="add">Add</button>
+          </div>
+        </form>
+        <form onsubmit="event.preventDefault();search()" class="searchForm">
+          <input type="text" class="search" oninput="search()" />
+          <button class="searchButton">🔎</button>
+        </form>
+      </div>
+      <div>
+        <ul></ul>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="vocabulary.js"></script>
+  </body>
+</html>

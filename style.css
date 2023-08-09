@@ -1,0 +1,114 @@
+:root {
+    --test: 10px;
+    --primary-color: #1F2A38;
+    --secondary-color: #A7C5BD;
+    --light-grey:#E2E8F0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #E2E8F0;
+    min-height: 100vh;
+}
+
+header {
+    height: 15vh;
+    background-color: #1F2A38;
+}
+footer{
+    height: 15vh;
+    background-color: var(--primary-color);
+    position: sticky;
+    top:100%;
+}
+
+.header {
+    font-size: 72px;
+    margin: 0;
+    color: #A7C5BD;
+    text-align: left;
+    margin-left: 16px;
+    padding-top: 30px;
+}
+.h5head {
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 16px;
+    font-size: 28px;
+    padding-top: 8px;
+  
+}
+.deleteButton{
+    border: none;
+    background: none;
+    font-size: 20px;
+    margin-left: 4px;
+}
+
+ul {
+    font-size: 30px;
+}
+
+.textbox {
+    margin-left: 10px;
+}
+
+.nameInput {
+    margin-left: 16px;
+    border-radius: 7px;
+    height: 25px;
+    font-size: 20px;
+}
+
+.definitionInput {
+    border-radius: 7px;
+    height: 25px;
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+
+.add {
+    border-radius: 7px;
+    height: 31px;
+
+}
+
+.layout{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    margin-top: 50px;
+    
+    border-radius: 7px;
+    height: 25px;
+    font-size: 20px;
+}
+
+.searchButton{
+    border-radius: 7px;
+    margin-top: 50px;
+    height: 31px;
+    margin-right: 8px;
+}
+
+.inputWrapper{
+    display:flex;
+    align-items: center;
+}
+
+.searchForm{
+    display: flex;
+    align-items: center;
+}
+
+.editButton{
+    border: none;
+    background: none;
+    font-size: 20px;
+}

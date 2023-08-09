@@ -1,0 +1,4 @@
+
+statt name + definition -> input type text
+aus for loop "i" zur function edit
+vocabularyList[index2].name = input inhalt
