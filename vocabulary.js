@@ -1,10 +1,16 @@
-const vocabularyList = [];
+let vocabularyList = [];
 /** @ts-expect-error @type HTMLInputElement */
 const nameInput = document.querySelector('.nameInput');
 /** @ts-expect-error @type HTMLInputElement */
 const definitionInput = document.querySelector('.definitionInput');
 const ul = document.querySelector('ul');
 
+const data = localStorage.getItem('list');
+if (data !== null) {
+  vocabularyList = JSON.parse(data);
+  console.log(vocabularyList);
+  reRender(vocabularyList);
+}
 function reRender(list, indexToEdit) {
   if (ul !== null) {
     ul.innerHTML = '';
@@ -53,11 +59,13 @@ function addButton() {
   nameInput.value = '';
   definitionInput.value = '';
   vocabularyList.push(vocabulary);
+  localStorage.setItem('list', JSON.stringify(vocabularyList));
   reRender(vocabularyList);
 }
 
 function deleteItem(index) {
   vocabularyList.splice(index, 1);
+  localStorage.setItem('list', JSON.stringify(vocabularyList));
   reRender(vocabularyList);
 }
 
@@ -69,6 +77,7 @@ function saveItem(index) {
   if (nameEditInput.value === '' && definitionEditInput.value === '') return;
   vocabularyList[index].name = nameEditInput.value;
   vocabularyList[index].definition = definitionEditInput.value;
+  localStorage.setItem('list', JSON.stringify(vocabularyList));
   reRender(vocabularyList);
 }
 
@@ -77,11 +86,3 @@ function search() {
   const searchQuery = document.querySelector('.search').value;
   reRender(vocabularyList.filter(a => a.name.includes(searchQuery) || a.definition.includes(searchQuery)));
 }
-
-// Suchvorschläge:
-// /** @ts-expect-error @type HTMLDataListElement */
-// const dataList = document.querySelector('datalist');
-// /** @ts-expect-error @type HTMLOptionElement */
-// const suggestion = document.querySelector('option');
-// dataList.appendChild(suggestion);
-// suggestion.value =
